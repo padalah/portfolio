@@ -16,8 +16,33 @@
 
 			<!-- Header -->
 				<section id="header">
+
+					<!-- Logo >
+						<h1><a href="index.html">Susmita's Portfolio</a></h1-->
+
+					<!-- Nav -->
 						<nav id="nav">
 							<ul>
+								<!--li class="current"><a href="index.html">Home</a></li>
+								<li>
+									<a href="#">Dropdown</a>
+									<ul>
+										<li><a href="#">Lorem ipsum dolor</a></li>
+										<li><a href="#">Magna phasellus</a></li>
+										<li><a href="#">Etiam dolore nisl</a></li>
+										<li>
+											<a href="#">Phasellus consequat</a>
+											<ul>
+												<li><a href="#">Magna phasellus</a></li>
+												<li><a href="#">Etiam dolore nisl</a></li>
+												<li><a href="#">Veroeros feugiat</a></li>
+												<li><a href="#">Nisl sed aliquam</a></li>
+												<li><a href="#">Dolore adipiscing</a></li>
+											</ul>
+										</li>
+										<li><a href="#">Veroeros feugiat</a></li>
+									</ul>
+								</li-->
 								<li><a href="index.html">Home</a></li>
 								<li><a href="right-sidebar.html">Projects</a></li>
 								<li><a href="no-sidebar.html">About</a></li>
@@ -25,7 +50,7 @@
 						</nav>
 				</section>
 
-				<!--Intro -->
+					<!--Intro -->
 				<section id="main" class="box">
 					<div class="container">
 							<header class="major">
@@ -39,67 +64,77 @@
 							
 							<h3>The Purpose</h3>
 							<section class = "container">
-									<p>We aimed to find if there were gender biased barriers in Open Source Software (OSS). Our research questions were:
-
-										<ul>
-											<li> What kinds of issues can be revealed by looking at OSS through the lens of tools and infrastructure? </li>
-											
-											<li> Are tools and infrastructure complicit in causing newcomer barriers? If so, how? </li>
-										
-											<li> Are there newcomer barriers to OSS contribution that are gender biased? If there are, in what ways are they biased? </li>
-										</ul>	
-											
+									<p>
+										Adobe researchers developed an image recoloring tool with an optimized image color decomposition algorithm.  
+										The goal is to redesign the user interface and improve the user interaction of the tool. 
+										To achieve this goal, we will represent the 3D geometrical representation of the hue, saturation, and value (HSV) color space in a 2D circular view. 
+										We utilized usability principles to design an effective interface that can be used by professional designers and knowledge workers.
 								    </p>
+									<p>
+										Original UI:
+									</p>
+									<a href="images/origUI.png"><img id=bodyImg src="images/origUI.png" alt="" /></a>
 							</section>
 
 							<h3>The Quest</h3>
 							<section class = "container">
 									<p>
-										We used the GenderMag, short for "Gender Inclusive Magnifier" method to identify gender biases that newcomers to OSS face. 
-										GenderMag is a walkthrough-based interface inspection method designed to help software practitioners identify gender-inclusiveness issues in their software. 
-										The method has various four personas but we use the Abby persona (i.e. the persona that represents the majority of women's interactions with technology). 
+										First we met with our mentor, Jose Echevarria, from our corporate sponsor, Adobe to understand the overall goals of our project. 
+										For the entire time we worked on the project, we met with him weekly to give progress updates, discuss any issues, and ensure we were working towards the correct goals. 
+										We prepared a requirements document that served to clarify the scope of the project. 
+										Also, once we had access to the codebase, we performed a technology review to better understand the different components and other technology in that space. 
+										Since most of us, were not very familiar with color theory, we spent some time learning more about the theories behind color and perception.
 									</p>	
 									<p>
-										Each persona has five facets that the participants of the study use to evaluate the software:
+										Our codebase mainly consisted of these libraries and functions:
 									</p>
-									<a href="images/Abby.png"><img id=bodyImg src="images/Abby.png" alt="" style="width:100%;max-width:500px"/></a>
 									<p>
-										We ran field studies with five teams of software professionals that evaluated a range of use cases on different tools and environments. 
-										We audio-video recorded as software professionals used the Abby persona to evaluate their projects for the given use case(s). 
-										In the GenderMag method, the participants of the study answer these questions as they perform the cognitive walkthrough:
 
 										<ul>
-											<li>SubgoalQ: Will <persona> have formed this subgoal as a step to their overall goal? (Yes/no/maybe, why, what facets did you use)</li>
 
-											<li>ActionQ1: Will <persona> know what to do at this step? (Yes/no/maybe, why, what facets did you use)</li>
-												
-											<li>ActionQ2: If <persona> does the right thing, will s/he know s/he did the right thing and is making progress toward their goal? (Yes/no/maybe, why, what facets did you use).</li>
+											<li>Three.js: A library for 3D graphics</li>
+											<li>Chroma.js: A library for used to display color and different colors spaces</li>											
+											<li>TrackballControls.js: Part of the Three.js library under the examples/js/controls and is used for interaction with the mouse</li>
+											<li>Detector.js: Has been refactored to WebGL.js, also part of Three.js under examples/js</li>
+											<li>stats.min.js: Monitors code performance</li>
+											<li>purl.js: Used to personalize webpages to each user</li>
+											<li>Blob.js: Represents file of raw immutable data</li>
+											<li>canvas-toBlob.js: Converts canvas elements into Blob objects</li>
 										</ul>
 
-										We also used a subsection of the 58 barriers newcomers to OSS face as established in previous research. 
-										This barrier set was used to identify if the issues identified by the participants were also newcomer barriers.
+										We spent about ten weeks coding to accomplish a redesigned graphical user interface. 
+										During this time, we also conducted a usability study with six participants to on the initial user interface given to us by Adobe. 
+										This helped us identify pain points for the users and understand what elements would be important in redesigning the user interface. 
+										After the development of the redesigned interface, we conducted another usability study with the same participants to identify if we were successful in providing users a more intuitive and easier to use interface.
 									</p>
 							</section>
 
 							<h3>The Solution</h3>
 							<section class = "container">
 									<p>
-										There were many issues in the different uses cases as shown in the table:
+										Redesigned UI:
 									</p>
-									<a href="images/DifferentUseCases.png"><img id=bodyImg src="images/DifferentUseCases.png" alt="" style="width:100%;max-width:500px"/></a>
-									<p>
-										Each issue was either a newcomer barrier or not. If it was identified as newcomer barrier and was also tied to a gender facet then it was a gender biased barrier.
-									</p>
-									<a href="images/AllBarriers.png"><img id=bodyImg src="images/AllBarriers.png" alt="" /></a>
-									<p>
-										<b>73% of the total newcomer barriers were gender biased (i.e. they were tied to a gender facet).</b>
-									</p>
+									<a href="images/newUI.png"><img id=bodyImg src="images/newUI.png" alt="" /></a>
 							</section>
 							
 							<h3>The Impact</h3>
 							<section class = "container">
-									<p>Published in ICSE '18: Proceedings of the 40th International Conference on Software Engineering</p>
-									<p>Full paper available at: <a>https://doi.org/10.1145/3180155.3180241</a></p>
+									<p>To assess the usability of our GUI, we conducted initial user studies on Adobe’s original user interface and then another round after we developed our new GUI.</p>
+									<p>
+									Takeaways from studies on the original GUI:
+										<ul>
+											<li>P3: “It assumed you already knew a lot of the functionality”</li>
+											<li>P2: “I don’t understand the RGB cube [but] I like the inertia feature”</li>
+										</ul>
+									</p>
+									<p>
+									Takeaways from studies on our redesigned GUI:
+										<ul>
+											<li>P3: “I really liked moving points on the color wheel [but] didn’t really need the sliders”</li>
+											<li>P1: “It was engaging to see my changes update in real time” </li>
+										</ul>
+									</p>
+									<!--a href="images/ratings.png"><img src="images/ratings.png" alt="" /></a-->		
 							</section>
 						</section>	
 					</div>
