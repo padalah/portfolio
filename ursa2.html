@@ -1,0 +1,323 @@
+<!DOCTYPE HTML>
+<!--
+	Dopetrope by HTML5 UP
+	html5up.net | @ajlkn
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Dopetrope by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="homepage is-preload">
+		<div id="page-wrapper">
+
+			<!-- Header >
+				<section id="header">
+
+					< Logo >
+						<h1><a href="index.html">Susmita's Portfolio</a></h1>
+
+					<Nav>
+						< nav id="nav">
+							<ul>
+								<li class="current"><a href="index.html">Home</a></li>
+								<li>
+									<a href="#">Dropdown</a>
+									<ul>
+										<li><a href="#">Lorem ipsum dolor</a></li>
+										<li><a href="#">Magna phasellus</a></li>
+										<li><a href="#">Etiam dolore nisl</a></li>
+										<li>
+											<a href="#">Phasellus consequat</a>
+											<ul>
+												<li><a href="#">Magna phasellus</a></li>
+												<li><a href="#">Etiam dolore nisl</a></li>
+												<li><a href="#">Veroeros feugiat</a></li>
+												<li><a href="#">Nisl sed aliquam</a></li>
+												<li><a href="#">Dolore adipiscing</a></li>
+											</ul>
+										</li>
+										<li><a href="#">Veroeros feugiat</a></li>
+									</ul>
+								</li>
+								<li><a href="index.html">Home</a></li>
+								<li><a href="right-sidebar.html">Projects</a></li>
+								<li><a href="no-sidebar.html">About</a></li>
+							</ul>
+						</nav> -->
+					
+					<!--Intro -->
+				<section id="main" class="box">
+					<div class="container">
+							<header class="major">
+								<h2>Coreless Promoters in Arabadopsis</h2>
+							</header>
+						<section class = "container">
+							<h3>The Purpose</h3>
+							<section class = "container">
+								<p>
+									To identify the percentage of coreless promoters in the DNA of Arabadopsis (a plant). The goal was to answer these two question:
+									<ul>
+										<li>How many promoters do not contain any CREs within a 500 BP window of the TSS?</li>
+										<li>How many promoters do not contain any CREs within a 50 BP window surrounding their literature reported CRE site locations relative to the TSS?</li>
+									</ul>
+								</p>
+							</section>
+
+							<h3>The Quest</h3>
+							<section class = "container">
+									<p>
+										Transcriptional regulation is an essential biological process that promotes cellular growth, differentiation and development. 
+										RNA Polymerase II (pol-II) binds to cis-regulatory elements (CREs) encoded in DNA near the start of a gene (see image below). The transcription start site (TSS) is the 
+										location on the DNA sequence where pol-II begins transcribing the gene’s DNA code into an RNA copy. The “core promoter region” is the region 
+										immediately surrounding the TSS.
+									</p>	
+									<a href="images/RNA.png"><img id=bodyImg src="images/RNA.png" alt="" style="width:100%;max-width:500px"/></a>
+									<p>
+										The forward strands and reverse strands are represented below. We are 
+										looking to see if there are CPEs are within: 
+
+										<ul>
+											<li>500 BP of the TSS</li>
+
+											<li>50 BP of each CPE’s literature reported location on both the forward and reverse strands near each gene.</li>
+										</ul>
+									</p>
+									<a href="images/forwardReverse.png"><img id=bodyImg src="images/forwardReverse.png" alt="" style="width:100%;max-width:500px"/></a>
+									<a href="images/cpePositions.png"><img id=bodyImg src="images/cpePositions.png" alt="" style="width:100%;max-width:500px"/></a>
+							</section>
+
+							<h3>The Solution</h3>
+							<section class = "container">
+									<p>
+										I wrote a Perl script to analyze both the forward and reverse strands of DNA. 
+									</p>
+									<p>
+										Looking at only the forward strands for all genes: 
+									</p>
+									<ul>
+										<li>Percent w/ no CREs in 500 BP TSS window:  17.35%</li>
+										<li>Percent w/ no CREs near lit rep sites: 72.92%</li>
+									</ul>
+									<p>
+										Looking at the reverse strands for all genes:
+									</p>
+									<ul>
+										<li>Percent w/ no CREs in 500 BP TSS window:  13.92%</li>
+										<li>Percent w/ no CREs near lit rep sites: 73.72%</li>
+									</ul>
+									<p>
+										Combining the forward and the reverse strands for all genes:
+									</p>
+									<ul>
+										<li>Percent w/ no CREs in 500 BP TSS window: 4.07%</li>
+										<li>Percent w/ no CREs near lit rep sites: 58.13%</li>
+									</ul>
+							</section>
+							
+							<h3>The Impact</h3>
+							<section class = "container">
+									<p>In the near future this research could be furthered by asking the question of “what drives coreless promoters in Arabidopsis?” 
+										The first thing would be to look at whether coreless promoters are always associated with a position specific enhancer element.
+									</p>
+							</section>
+						</section>	
+					</div>
+						<!--footer>
+							<ul class="actions">
+								<li><a href="#" class="button large">Get Started</a></li>
+								<li><a href="#" class="button alt large">Learn More</a></li>
+							</ul>
+						</footer-->
+				</section>
+
+				
+
+			<!-- Main -->
+				<!--section id="main">
+					<div class="container">
+						<div class="row">
+							<div class="col-12">
+
+								< Portfolio >
+									<section>
+										<header class="major">
+											<h2>My Portfolio</h2>
+										</header>
+										<div class="row">
+											<div class="col-4 col-6-medium col-12-small">
+												<section class="box">
+													<a href="#" class="image featured"><img src="images/pic02.jpg" alt="" /></a>
+													<header>
+														<h3>Data Science Project 1</h3>
+													</header>
+													<p>Lorem ipsum dolor sit amet sit veroeros sed amet blandit consequat veroeros lorem blandit adipiscing et feugiat phasellus tempus dolore ipsum lorem dolore.</p>
+													<footer>
+														<ul class="actions">
+															<li><a href="#" class="button alt">Find out more</a></li>
+														</ul>
+													</footer>
+												</section>
+											</div>
+											<div class="col-4 col-6-medium col-12-small">
+												<section class="box">
+													<a href="#" class="image featured"><img src="images/pic03.jpg" alt="" /></a>
+													<header>
+														<h3>Data Science Project 2</h3>
+													</header>
+													<p>Lorem ipsum dolor sit amet sit veroeros sed amet blandit consequat veroeros lorem blandit adipiscing et feugiat phasellus tempus dolore ipsum lorem dolore.</p>
+													<footer>
+														<ul class="actions">
+															<li><a href="#" class="button alt">Find out more</a></li>
+														</ul>
+													</footer>
+												</section>
+											</div>
+											<div class="col-4 col-6-medium col-12-small">
+												<section class="box">
+													<a href="#" class="image featured"><img src="images/pic04.jpg" alt="" /></a>
+													<header>
+														<h3>GenderMag</h3>
+													</header>
+													<p>Lorem ipsum dolor sit amet sit veroeros sed amet blandit consequat veroeros lorem blandit adipiscing et feugiat phasellus tempus dolore ipsum lorem dolore.</p>
+													<footer>
+														<ul class="actions">
+															<li><a href="#" class="button alt">Find out more</a></li>
+														</ul>
+													</footer>
+												</section>
+											</div>
+											<div class="col-4 col-6-medium col-12-small">
+												<section class="box">
+													<a href="#" class="image featured"><img src="images/pic05.jpg" alt="" /></a>
+													<header>
+														<h3>Capstone Project</h3>
+													</header>
+													<p>Lorem ipsum dolor sit amet sit veroeros sed amet blandit consequat veroeros lorem blandit adipiscing et feugiat phasellus tempus dolore ipsum lorem dolore.</p>
+													<footer>
+														<ul class="actions">
+															<li><a href="#" class="button alt">Find out more</a></li>
+														</ul>
+													</footer>
+												</section>
+											</div>
+											<div class="col-4 col-6-medium col-12-small">
+												<section class="box">
+													<a href="#" class="image featured"><img src="images/pic06.jpg" alt="" /></a>
+													<header>
+														<h3>URSA Project</h3>
+													</header>
+													<p>Lorem ipsum dolor sit amet sit veroeros sed amet blandit consequat veroeros lorem blandit adipiscing et feugiat phasellus tempus dolore ipsum lorem dolore.</p>
+													<footer>
+														<ul class="actions">
+															<li><a href="#" class="button alt">Find out more</a></li>
+														</ul>
+													</footer>
+												</section>
+											</div>
+											<div class="col-4 col-6-medium col-12-small">
+												<section class="box">
+													<a href="#" class="image featured"><img src="images/pic07.jpg" alt="" /></a>
+													<header>
+														<h3>Health Portal</h3>
+													</header>
+													<p>Lorem ipsum dolor sit amet sit veroeros sed amet blandit consequat veroeros lorem blandit adipiscing et feugiat phasellus tempus dolore ipsum lorem dolore.</p>
+													<footer>
+														<ul class="actions">
+															<li><a href="#" class="button alt">Find out more</a></li>
+														</ul>
+													</footer>
+												</section>
+											</div>
+										</div>
+									</section>
+
+							</div>
+							<div class="col-12">
+
+								<Blog >
+									<section>
+										<header class="major">
+											<h2>The Blog</h2>
+										</header>
+										<div class="row">
+											<div class="col-6 col-12-small">
+												<section class="box">
+													<a href="#" class="image featured"><img src="images/pic08.jpg" alt="" /></a>
+													<header>
+														<h3>Magna tempus consequat</h3>
+														<p>Posted 45 minutes ago</p>
+													</header>
+													<p>Lorem ipsum dolor sit amet sit veroeros sed et blandit consequat sed veroeros lorem et blandit adipiscing feugiat phasellus tempus hendrerit, tortor vitae mattis tempor, sapien sem feugiat sapien, id suscipit magna felis nec elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos lorem ipsum dolor sit amet.</p>
+													<footer>
+														<ul class="actions">
+															<li><a href="#" class="button icon solid fa-file-alt">Continue Reading</a></li>
+															<li><a href="#" class="button alt icon solid fa-comment">33 comments</a></li>
+														</ul>
+													</footer>
+												</section>
+											</div>
+											<div class="col-6 col-12-small">
+												<section class="box">
+													<a href="#" class="image featured"><img src="images/pic09.jpg" alt="" /></a>
+													<header>
+														<h3>Aptent veroeros aliquam</h3>
+														<p>Posted 45 minutes ago</p>
+													</header>
+													<p>Lorem ipsum dolor sit amet sit veroeros sed et blandit consequat sed veroeros lorem et blandit adipiscing feugiat phasellus tempus hendrerit, tortor vitae mattis tempor, sapien sem feugiat sapien, id suscipit magna felis nec elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos lorem ipsum dolor sit amet.</p>
+													<footer>
+														<ul class="actions">
+															<li><a href="#" class="button icon solid fa-file-alt">Continue Reading</a></li>
+															<li><a href="#" class="button alt icon solid fa-comment">33 comments</a></li>
+														</ul>
+													</footer>
+												</section>
+											</div>
+										</div>
+									</section>
+
+							</div>
+						</div>
+					</div>
+				</section-->
+
+			<!-- Footer -->
+				<section id="footer" class="box">
+					<div class="container">
+						<div class="row">
+							<div class="col-12">
+								<section>
+									<ul class="social">
+										<li><a class="icon brands fa-linkedin-in" href="#"><span class="label">LinkedIn</span></a></li>
+										<li><a class="icon brands fa-github" href="#"><span class="label">Github</span></a></li>
+									</ul>
+								</section>
+							</div>
+							<div class="col-12">
+								<!-- Copyright -->
+								<div id="copyright">
+									<ul class="links">
+										<li>&copy; Susmita Padala. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+									</ul>
+								</div>
+
+							</div>
+						</div>
+					</div>
+				</section>
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="assets/js/jquery.min.js"></script>
+			<script src="assets/js/jquery.dropotron.min.js"></script>
+			<script src="assets/js/browser.min.js"></script>
+			<script src="assets/js/breakpoints.min.js"></script>
+			<script src="assets/js/util.js"></script>
+			<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
