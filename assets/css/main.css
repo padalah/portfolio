@@ -1602,16 +1602,20 @@ input, select, textarea {
 		}
 
 	.dashfolio-tag {
-		cursor:pointer;
 		background-color: blue;
 		padding: 5px 10px 5px 10px;
-		display: inline-block;
+		display: block;
 		margin-top: 3px; /*incase tags go in next line, will space */
 		color:#fff;
 		margin-right: 4px;
 		background:#789;
 		padding-right: 20px; /* adds space inside the tags for the 'x' button */
 		float: left;
+	}
+
+	.tag-container {
+		display: inline-block;
+		margin-bottom: 0;
 	}
 
 /* Button */
@@ -1628,16 +1632,6 @@ input, select, textarea {
 		border: 0;
 		border-radius: 5px;
 		background: #d52349;
-		color: #fff !important;
-		font-weight: 700;
-		outline: 0;
-		font-size: 1.1em;
-		padding: 0.65em 1.5em 0.65em 1.5em;
-		text-align: center;
-		-moz-transition: background-color .25s ease-in-out;
-		-webkit-transition: background-color .25s ease-in-out;
-		-ms-transition: background-color .25s ease-in-out;
-		transition: background-color .25s ease-in-out;
 	}
 
 		input[type="button"]:hover,
@@ -1663,6 +1657,17 @@ input, select, textarea {
 		.button.alt {
 			background: #252122;
 			margin-top: 15px;
+			display: inline-flex;
+			color: #fff !important;
+		font-weight: 700;
+		outline: 0;
+		font-size: 1.1em;
+		padding: 0.65em 1.5em 0.65em 1.5em;
+		text-align: center;
+		-moz-transition: background-color .25s ease-in-out;
+		-webkit-transition: background-color .25s ease-in-out;
+		-ms-transition: background-color .25s ease-in-out;
+		transition: background-color .25s ease-in-out;
 		}
 
 			input[type="button"].alt:hover,
@@ -1759,11 +1764,12 @@ input, select, textarea {
 	ul.actions {
 		list-style: none;
 		padding-left: 0;
+		display: block;
 	}
 
 		ul.actions li {
 			display: inline-block;
-			margin-left: 1em;
+			margin-left: 0;
 			padding-left: 0;
 		}
 
@@ -2115,11 +2121,13 @@ input, select, textarea {
 	  .topnav a {
 		float: left;
 		display: block;
-		color: #f2f2f2;
-		text-align: center;
+		color: white;
 		padding: 14px 16px;
 		text-decoration: none;
 		font-size: 17px;
+		background-color: inherit;
+		font-family: inherit;
+		font-style: inherit;
 	  }
 	  
 	  .active {
@@ -2132,6 +2140,7 @@ input, select, textarea {
 		border: none;
 		outline: none;
 		padding: 14px 16px;
+		display: none;
 	  }
 	  
 	  .topnav .icon {

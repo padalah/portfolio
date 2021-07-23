@@ -72,26 +72,26 @@
 					<h3>The Solution</h3>
 					<h4>Semantic Segmentation</h4>
 					<figcaption>Semantic Segmentation is the process of taking an image and labeling each pixel as a type of object. In our case, the object will either be a nodule or not a nodule</figcaption>
-					<a href="images/semanticSegmentation.png"><img id=bodyImg src="images/semanticSegmenatation.png" alt=""></a>
+					<a href="images/semanticSegmentation.png"><img id=bodyImg src="images/semanticSegmenatation.png" alt="" style="width:100%;max-width:900px"></a>
 					<h4>Understanding our Dataset</h4>
 					<figcaption>Nodules labeled by expert annotators on the lung CT scans</figcaption>
-					<a href="images/nodulesHistogram2.png"><img id=bodyImg src="images/nodulesHistogram2.png" alt=""></a>
+					<a href="images/nodulesHistogram2.png"><img id=bodyImg src="images/nodulesHistogram2.png" alt="" style="width:100%;max-width:900px"></a>
 					<figcaption>Nodules distribution by size and frequency</figcaption>
-					<a href="images/nodulesSize.png"><img id=bodyImg src="images/nodulesSize.png" alt=""></a>
+					<a href="images/nodulesSize.png"><img id=bodyImg src="images/nodulesSize.png" alt="" style="width:100%;max-width:900px"></a>
 					<h4>Preprocessing Images</h4>
 					<figcaption>To identify lung tissue create a lung mask (Since lungs are full of air it is less dense in CT scans)</figcaption>
-					<a href="images/lungMask.png"><img id=bodyImg src="images/lungMask.png" alt=""></a>
+					<a href="images/lungMask.png"><img id=bodyImg src="images/lungMask.png" alt="" style="width:100%;max-width:900px"></a>
 					<figcaption>To reduce size and noise of data identify a "region of interest" (i.e. the lungs) for the model to focus on</figcaption>
-					<a href="images/regionOfInterest.png"><img id=bodyImg src="images/regionOfInterest.png" alt=""></a>
+					<a href="images/regionOfInterest.png"><img id=bodyImg src="images/regionOfInterest.png" alt="" style="width:100%;max-width:900px"></a>
 					<h4>Modeling and Training</h4>
 					<p>
 						We used a "U-Net" architecture for our Convolutional Neural Network (CNN) which consists of 2 branches, contracting 
 						and expanding.
 					</p>
 					<figcaption>Semantic Segmentation is the process of taking an image and labeling each pixel as a type of object. In our case, the object will either be a nodule or not a nodule</figcaption>
-					<a href="images/u-net.png"><img id=bodyImg src="images/u-net.png" alt=""></a>
+					<a href="images/u-net.png"><img id=bodyImg src="images/u-net.png" alt="" style="width:100%;max-width:900px"></a>
 					<figcaption>The base model parameters we built using the U-Net architecture were as follows:</figcaption>
-					<a href="images/u-netParams.png"><img id=bodyImg src="images/u-netParams.png" alt=""></a>
+					<a href="images/u-netParams.png"><img id=bodyImg src="images/u-netParams.png" alt="" style="width:100%;max-width:900px"></a>
 					<p>
 						We used tensorflow_cloud api to train the model in Google AI Platform. 
 					</p>
