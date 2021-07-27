@@ -215,6 +215,14 @@ input, select, textarea {
 
 		}
 
+		@media screen and (max-width: 600px) {
+
+			.container {
+				width: calc(100% - 20px);
+			}
+
+		}
+
 /* Row */
 
 	.row {
@@ -1739,6 +1747,11 @@ input, select, textarea {
 			margin: 0 2em 2em 0;
 		}
 
+		.img-fluid {
+			max-width: 100%;
+			height: auto;
+		}
+
 /* List */
 
 	ul {
@@ -2133,7 +2146,7 @@ input, select, textarea {
 	  .active {
 		background-color: inherit;
 		font-family: inherit;
-		font-style: inherit;
+		font-style: bold;
 		color: white;
 		font-size: 17px; 
 		margin: 0;
@@ -2157,7 +2170,7 @@ input, select, textarea {
 		border: none;
 		outline: none;
 		color: white;
-		padding: 14px 16px;
+		padding: 16px 16px;
 		background-color: inherit;
 		font-family: inherit;
 		margin: 0;
@@ -2609,7 +2622,7 @@ input, select, textarea {
 
 /* Medium */
 
-	#navPanel, #titleBar {
+	/* #navPanel, #titleBar {
 		display: none;
 	}
 
@@ -2617,13 +2630,13 @@ input, select, textarea {
 
 		/* Basic */
 
-			html, body {
+			/* html, body {
 				overflow-x: hidden;
 			}
 
 		/* Box */
 
-			.box footer ul.actions li {
+			/* .box footer ul.actions li {
 				margin: 1em 0 0 0;
 				display: block;
 			}
@@ -2634,7 +2647,7 @@ input, select, textarea {
 
 				.box footer ul.actions li:first-child {
 					margin-top: 0;
-				}
+				} */ */ */
 
 		/* Header */
 
@@ -2709,7 +2722,7 @@ input, select, textarea {
 				padding-bottom: 1px;
 			}
 
-			#titleBar {
+			/* #titleBar {
 				-moz-backface-visibility: hidden;
 				-webkit-backface-visibility: hidden;
 				-ms-backface-visibility: hidden;
@@ -2856,7 +2869,7 @@ input, select, textarea {
 				-webkit-transform: translateX(0);
 				-ms-transform: translateX(0);
 				transform: translateX(0);
-			}
+			} */
 
 	}
 
