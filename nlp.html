@@ -1,0 +1,148 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Dopetrope by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="homepage is-preload">
+		<div id="page-wrapper">
+			<div class="topnav" id="myTopnav">
+				<a href="index.html" class="active">Home</a>
+				<div class="dropdown">
+				  <button class="dropbtn">Projects<i class="fa fa-caret-down"></i></button>
+				  <div class="dropdown-content">
+					<a href="airlines.html">Predicting Flight Delays</a>
+					<a href="nlp.html">Exploring Catastrophic Forgetting for Question Answering Domain
+						Adaptation in Text-to-Text Transformers</a>
+					<a href="experiment.html">Effect of Political Ideology on Consumer Behavior</a>
+					<a href="dataSci2.html">Pulmonary Nodule Segmentation</a>
+					<a href="dataSci1.html">Poverty and COVID-19</a>
+					<a href="genderMag.html">Barriers to entry in Open Source Software</a>
+					<a href="pmWork.html">Certifications and Discounts</a>
+					<a href="capstone.html">Interactive Wheel Based Image Recoloring GUI</a>
+					<a href="ursa.html">Coreless Promoters in Arabadopsis DNA</a>
+					<a href="health.html">Health Portal - Built for All</a>
+				  </div>
+				</div> 
+			</div>
+		<!--Intro -->
+			<section id="main" class="box">
+				<div id="title" class="container">
+					<header class="major">
+						<h2>Exploring Catastrophic Forgetting for Question Answering Domain Adaptation in Text-to-Text Transformers</h2>
+					</header>
+				</div>
+					
+				<div id="purpose" class="container">
+					<h3>The Purpose</h3>
+					<p> Catastrophic Forgetfulness occurs when Question-Answer (QA) systems, models are pre-trained on large, general source domain data 
+						and subsequently fine-tuned on target domain data. We want to research catastrophic forgetting in text-to-text transformer models and use 
+						regularization methods to alleviate any forgetting that occurs.
+                    </p>
+					<p></p>
+				</div>	
+
+							
+				<div id="quest" class = "container">
+					<h3>The Quest</h3>
+					<p> A picture speaks a million words! The entire quest can be illustrated by </p>
+					<a href="images/nlpPaperSummary.png"><img id=bodyImg class="img-fluid" src="images/nlpPaperSummary.png" alt="" /></a>
+					<p>
+					To establish a baseline, we evaluated the source validation dataset of the UnifiedQA model using the model. The UnifiedQA model is publicaly avaliable
+					and was developed by AllenAI. The UnifiedQA model uses was trained on 8 question-answer datasets of four different types as outlined by the image below.
+					For each type of dataset, we need to us a different evaluation metric. 
+					</p>
+					<figcaption>The UnifiedQA model was trained on different types of Question-Answer datasets</figcaption>
+					<a href="images/nlpUnifiedQAModel.png"><img id=bodyImg class="img-fluid" src="images/nlpUnifiedQAModel.png" alt="" /></a>
+					
+					<p>
+					Then, we fine-tuned the model using two different domain specific datasets called BioASQ and SciQ. These datasets were split into 80% training and
+					20% validation datasets. The training dataset was used for finetuning. The finetuning was done using TensorFlow for 5 epochs with an input length
+					of 512 and a target length of 128.
+
+					The small BioASQ dataset contained 3,743 records. It also consists of four types of questions. About a quarter of the questions are of the 
+					abstractive type, 20% are extractive (one word answer), a quarter are lists (answer consists of a list of items, can be seen as
+					extractive), and close to 30% are yes/no. There are no multiple choice questions in this dataset.
+
+					The SciQ dataset consists of 13,679 crowd-sourced science exam questions about Physics, Chemistry, and Biology, among others. The questions are in
+					multiple-choice format. For the majority of the questions, an additional paragraph with supporting evidence for the correct answer is provided. 
+					</p>
+					<figcaption>The table shows the results of the source validation dataset before and after finetuning with BioASQ and SciQ</figcaption>
+					<a href="images/nl.png"><img id=bodyImg class="img-fluid" src="images/nlpUnifiedQAModel.png" alt="" /></a>
+
+					<p>
+					Later, we applied regularization methods of L2 and Elastic Weight Consolidation (EWC), to see if it has an impact on alleiviating forgetfulness.
+					</p>	
+					<p></p>
+				</div>
+				
+				<div id="solution" class = "container">
+					<h3>The Solution</h3>
+					<p>
+					As shown in the table below, we were able to establish catastrophic forgetfulness on a finetuned model and that adding regurlarization alleviated 
+					forgetfulness. We can see that without any finetuning, the model evaluated the RACE dataset with a String Similarity score of 58.24. However, finetuning
+					with BioASQ resulted in catastrophic forgetting leading the performance to fall to 53.71. Adding the elastic weight consolidation, ensured the model recovered
+					and actually performed better than it had without finetuning with a score of 58.59.
+					</p>
+					<a href="images/bioasqSciqReg.png"><img id=bodyImg class="img-fluid" src="images/bioasqSciqReg.png" alt="" /></a>
+
+					<p>
+					We validated the models using the validation datasets of BioASQ and SciQ. As you can see the SciQ dataset performed very well. We postulate
+					that catastrophic forgetting was more serious in SciQ than BioASQ. It seemed as though the fine-tuned model learned really well on SciQ but also forgot more of
+					its source domain knowledge. One reason why the models learned SciQ well may be because the SciQ dataset was easier to be trained on. This was a multiple choice dataset with mean input length
+					of 556 words and mean answer length of 11 words. The input consisted of a question, four options and a support sentence that supports the correct answer
+					option. The answer could be easily found in the support sentence. Also, the dataset had 10,943 training examples, which is 3 times more than BioASQ. This may have
+					allowed model to learn SciQ so well that regularizations did not help.
+					</p>
+					<a href="images/nlpValidatingBioasqScia.png"><img id=bodyImg class="img-fluid" src="images/nlpValidatingBioasqScia.png" alt="" /></a>
+					<p></p>
+				</div>
+				
+				<div id="impact" class = "container">
+					<h3>The Impact</h3>
+					<p>
+					Overall, we notiched that catastrophic forgetfulness happens across all question-answer dataset types. Elastic Weight Conolidation was the better regularization 
+					method. However, L2 regularization also helped performance for the model finetuned on the SciQ data. Also the model with both the Elastic Weight Consolidation and L2 regularization didn't perform better than individual reuglarization methods.
+					</p>
+					<p></p>
+				</div>
+			</section>		
+
+			<!-- Footer -->
+			<section id="footer" class="box">
+				<div id="footer" class="container">
+					<div class="row">
+						<div class="col-12">
+							<section>
+								<ul class="social">
+									<li><a class="icon brands fa-linkedin-in" href="https://www.linkedin.com/in/susmitapadala/"><span class="label">LinkedIn</span></a></li>
+									<li><a class="icon brands fa-github" href="https://github.com/padalah"><span class="label">Github</span></a></li>
+								</ul>
+							</section>
+							<!-- Copyright -->
+							<div id="copyright">
+								<ul class="links">
+									<li>&copy; Susmita Padala. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+								</ul>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</section>
+
+		</div>
+
+		<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.dropotron.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

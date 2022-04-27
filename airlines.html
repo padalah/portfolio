@@ -1,0 +1,178 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Dopetrope by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="homepage is-preload">
+		<div id="page-wrapper">
+			<div class="topnav" id="myTopnav">
+				<a href="index.html" class="active">Home</a>
+				<div class="dropdown">
+				  <button class="dropbtn">Projects<i class="fa fa-caret-down"></i></button>
+				  <div class="dropdown-content">
+					<a href="experiment.html">Effect of Political Ideology on Consumer Behavior</a>
+					<a href="airlines.html">Predicting Flight Delays</a>
+					<a href="nlp.html">Exploring Catastrophic Forgetting for Question Answering Domain
+						Adaptation in Text-to-Text Transformers</a>
+					<a href="dataSci1.html">Poverty and COVID-19</a>
+					<a href="dataSci2.html">Pulmonary Nodule Segmentation</a>
+					<a href="genderMag.html">Barriers to entry in Open Source Software</a>
+					<a href="pmWork.html">Certifications and Discounts</a>
+					<a href="capstone.html">Interactive Wheel Based Image Recoloring GUI</a>
+					<a href="ursa.html">Coreless Promoters in Arabadopsis DNA</a>
+					<a href="health.html">Health Portal - Built for All</a>
+				  </div>
+				</div> 
+			</div>
+		<!--Intro -->
+			<section id="main" class="box">
+				<div id="title" class="container">
+					<header class="major">
+						<h2>Predicting Flight Delays</h2>
+					</header>
+				</div>
+					
+				<div id="purpose" class="container">
+					<h3>The Purpose</h3>
+					<p> Our goal is to predict if a flight will be delayed more than 15 mins two hours before it departs (binary). </p>
+					<p></p>
+				</div>	
+
+							
+				<div id="quest" class = "container">
+					<h3>The Quest</h3>
+					<p>
+					The weather data comes from the National Ocianic and Atmospheric Administration (NOAA).
+					The weather and station data tables were cleaned and joined to create a weather dataset as shown below:
+					</p>
+					<a href="images/weatherPrep.png"><img id=bodyImg class="img-fluid" src="images/weatherPrep.png" alt="" /></a>
+					<p>We generated features for the weather dataset by one hot encoding the weather conditions (thunderstrom, ice, snow, and fog) at 2 hours and 4 hours prior. Also, we only retained the worst-reported weather condition in each hourly window.</p>
+					<p>
+					The flight data comes from the US Department of Transportation and spans from 2015-2019.
+					The flight data has 371 origin ariports and 369 destination airports with 19 different airlines and 7,894 unique tail numbers.
+					The process of cleaning up the data, and generating featuers for the flight dataset is below:
+					</p>
+					<a href="images/flightQuest.png"><img id=bodyImg class="img-fluid" src="images/flightQuest.png" alt="" /></a>
+					<p>
+					We took this raw data and cleaned the data based on the following principles:
+					<ul>
+						<li>Drop duplicates and nulls on target variable.</li>
+						<li>Drop duplicates on keys that should be unique (Tail Number + Departure Date and Time).</li>
+						<li>Drop duplicate flights for multiple carriers.</li>
+						<li>Drop redundant and retroactive columns that are not usable for inference.</li>
+						<li>Convert departure/arrival times to UTC.</li>
+						<li>Keep only continental-48 USA flights.</li>
+					</ul>	
+					</p>
+					<p>
+					From the clean-up and EDA of the flight dataset, there are four main insights:
+					<ul>
+						<li>82% of flights are not delayed.</li>
+						<li>Some routes have an outsized effect on delays.</li>
+						<li>Some airlines experience proportionally higher delays.</li>
+						<li>Carrier and late aircraft are most strongly correlated with delays.</li>
+					</ul>>
+					</p>	
+					<p>
+					We engineered five new features from the flight dataset:
+					<ul>
+						<li>O-D Pairs: We created origin destination pairs</li>
+						<li>PageRank: We used the page rank algorithm to rank the importance of airports for the network.</li>
+						<li>Network Features: </li>
+						<li>Delayed State Features: 
+							<li>Delay Graph: We created a graph with airports as nodes and edges as median delays per hour between those pairs. We used the edges to also the outbound and inbound mean delay too. We got these figures for each flight 2 and 4 hours before departure.
+							</li>
+							<a href="images/flightDelayGraph.png"><img id=bodyImg class="img-fluid" src="images/flightDelayGraph.png" alt="" /></a>
+							<li>Delay States: This is a snapshot fo delays in the overall network. We got the median delay per OD pair each hour and we created one vector per hour. Then we ran K means over all vectors to form cluster. Each centroid per cluster was a delay state. Our features were the delay state of the network 2 and 4 hours before the departure times. 
+							</li>
+							<a href="images/flightDelayStates.png"><img id=bodyImg class="img-fluid" src="images/flightDelayStates.png" alt="" /></a>
+						</li>
+						<li>Flight Chain Features: We created features from single aircraft journeys by getting the 5 previous flights, their delays if they happened 2 hours before booked departure, and the mean of those delays. </li>
+					</ul>
+					</p>
+					<p>
+					Finally, we joined the flight and weather datasets as shown to create a final table that was used in modeling.
+					</p>
+					<a href="images/flightJoinTables.png"><img id=bodyImg class="img-fluid" src="images/flightJoinTables.png" alt="" /></a>
+					<p></p>
+				</div>
+				
+				<div id="solution" class = "container">
+					<h3>The Solution</h3>
+					<p>
+					We explored various algorithms as to best model flight delays ash shown in this table:
+					</p>
+					<a href="images/flightAlgoExploration.png"><img id=bodyImg class="img-fluid" src="images/flightAlgoExploration.png" alt="" /></a>
+					<p> 
+					Our final model was a stacked weighted Random Forest Classifier and Regressor with Logistic Regressor Model. 
+					The classifier used catagorial varibles that were selected by leveraging decision tress and the regressor used continuous features 
+					selected through Principal Component Analysis (PCA). For PCA of continuous features, we looked at cumulative explained variance and chose k=13 as best performing (>95%).
+					We looked at eigenvectors of the first 5 principal components to get a sense of feature importance. The important 
+					features were mostly network-related and flight chain features.
+					</p>
+					<figcaption>Final Stacked Random Forest and Logistic Regressor (RF-LV) Model</figcaption>
+					<a href="images/flightFinalModel.png"><img id=bodyImg class="img-fluid" src="images/flightFinalModel.png" alt="" /></a>
+
+					<figcaption>Decision Tree used to select the categorical variables for weighted Random Froest Classifier.</figcaption>
+					<a href="images/flightDecisionTree.png"><img id=bodyImg class="img-fluid" src="images/flightDecisionTree.png" alt="" /></a>
+
+					<figcaption>Principal Component Analysis performed to select the continuous variables for the Random Forest Regressor.</figcaption>
+					<a href="images/flightPCA.png"><img id=bodyImg class="img-fluid" src="images/flightPCA.png" alt=""/></a>
+					<p>
+					We performed grid search to optimize all submodels in our final stacked model. The Grid search CV in Pyspark by default uses random k-folds, violating the time series dependency.
+					So, we implemented a Custom cross validation function thtat modifies the source code for how split is selected in folds by passing in a dictionary of dataframes with a special column indicating where to split.
+					The Grid search Cross-Validation becomes a wrapper over the model and returns model with best parameters.
+					</p>
+					<figcaption>Implemented custom time-series based Cross-Validation</figcaption>
+					<a href="images/flightCustomCV.png"><img id=bodyImg class="img-fluid" src="images/flightCustomCV.png" alt=""/></a>
+					<p></p>
+				</div>
+				
+				<div id="impact" class = "container">
+					<h3>The Impact</h3>
+					<p>
+					Leveraging our final stacked model, we used the 2015-2018 data to train the model and 2019 data to test resulting in an F-Beta (Beta=2) score of 0.557.
+					</p>
+					<p></p>
+				</div>
+			</section>		
+
+			<!-- Footer -->
+			<section id="footer" class="box">
+				<div id="footer" class="container">
+					<div class="row">
+						<div class="col-12">
+							<section>
+								<ul class="social">
+									<li><a class="icon brands fa-linkedin-in" href="https://www.linkedin.com/in/susmitapadala/"><span class="label">LinkedIn</span></a></li>
+									<li><a class="icon brands fa-github" href="https://github.com/padalah"><span class="label">Github</span></a></li>
+								</ul>
+							</section>
+							<!-- Copyright -->
+							<div id="copyright">
+								<ul class="links">
+									<li>&copy; Susmita Padala. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+								</ul>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</section>
+
+		</div>
+
+		<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.dropotron.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+
+	</body>
+</html>

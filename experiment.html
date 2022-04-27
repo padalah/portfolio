@@ -1,0 +1,158 @@
+<!DOCTYPE HTML>
+
+<html>
+	<head>
+		<title>Dopetrope by HTML5 UP</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+		<link rel="stylesheet" href="assets/css/main.css" />
+	</head>
+	<body class="homepage is-preload">
+		<div id="page-wrapper">
+			<div class="topnav" id="myTopnav">
+				<a href="index.html" class="active">Home</a>
+				<div class="dropdown">
+				  <button class="dropbtn">Projects<i class="fa fa-caret-down"></i></button>
+				  <div class="dropdown-content">
+					<a href="airlines.html">Predicting Flight Delays</a>
+					<a href="nlp.html">Exploring Catastrophic Forgetting for Question Answering Domain
+						Adaptation in Text-to-Text Transformers</a>
+					<a href="experiment.html">Effect of Political Ideology on Consumer Behavior</a>
+					<a href="dataSci2.html">Pulmonary Nodule Segmentation</a>
+					<a href="dataSci1.html">Poverty and COVID-19</a>
+					<a href="genderMag.html">Barriers to entry in Open Source Software</a>
+					<a href="pmWork.html">Certifications and Discounts</a>
+					<a href="capstone.html">Interactive Wheel Based Image Recoloring GUI</a>
+					<a href="ursa.html">Coreless Promoters in Arabadopsis DNA</a>
+					<a href="health.html">Health Portal - Built for All</a>
+				  </div>
+				</div> 
+			</div>
+		<!--Intro -->
+			<section id="main" class="box">
+				<div id="title" class="container">
+					<header class="major">
+						<h2>Effect of Political Ideology on Consumer Behavior</h2>
+					</header>
+				</div>
+					
+				<div id="purpose" class="container">
+					<h3>The Purpose</h3>
+					<p> 
+					Our questions was "Does political ideology has any effect on consumer purchasing decision?" Our null hypothesis was that there is no difference at number of sales and price between control and treatment groups
+					in average.
+                    </p>
+					<p></p>
+				</div>	
+
+							
+				<div id="quest" class = "container">
+					<h3>The Quest</h3>
+					<p>
+					We set up a 2x2 factorial experiment design where we sold Trump 2024 flags on Ebay through an auction over the experiment duration of two months. 
+					Each flag then had 2 auction duration possibilities: 1 day or 3 days. All auctions had a starting price of $2.99.
+					The experiment was conducted as a series of auctions on eBay. We always made sure to list two flags (of the
+					same type) at any given time, one for control and one for treatment (made in China). After the auction
+					ended, we launched a new set of auction pages. We measure if a flag sold, what price it sold for, and how
+					many views the auction page received. The experiment design is show below. The control and the treament differ
+					in that for the control flags we do not provide any details on where the flag was manufactured whereas for the treatment we clearly showcase that the flag
+					was "Made in China" in the ebay listing title.
+					</p>	
+					<figcaption>2x2 factorial experiment design; 3 tupes of flags combined by color to form two classes</figcaption>
+					<a href="images/experimentDesign.png"><img id=bodyImg class="img-fluid" src="images/experimentDesign.png" alt="" /></a>
+
+					<figcaption>Control vs Treatment on Ebay</figcaption>
+					<a href="images/experimentControlTreatment.png"><img id=bodyImg class="img-fluid" src="images/experimentControlTreatment.png" alt="" /></a>
+					<p></p>
+				</div>
+				
+				<div id="solution" class = "container">
+					<h3>The Solution</h3>
+					<p>
+					We measured the outcomes based on two differnt aspects:
+						<ul>
+							<li>Did the flag sell? (Boolean value)</li>
+								<ul>
+									<li>A lower number of items in the treatment group sold. </li>
+									<a href="images/experimentChartSoldItems.png"><img id=bodyImg class="img-fluid" src="images/experimentChartSoldItems.png" alt="" /></a>
+
+									<li>The sold indicator was the outcome variable to perform the three regressions as shown in the table below. We used only
+									treatment in first regression and duration and flag type as covariates in second regression. The third regression
+									added interaction term of treatment and flag types. The ATE was -0.246, which means by adding the “Made in China” phrase to sale page title would decrease
+									sales by 24.6%. The robust standard error was 0.101 and the 95% confidence interval was [-0.444, -0.048]. The ATE was statistically 
+									significant. After adding covariates, the ATE didn’t change much indicating that launching control and treatment
+									at the same time ensured an apples-to-apples comparison. After adding the interaction term, the coefficient
+									of ‘Treatment’ became the ATE of blue flags, which was statistically insignificant.
+									Also, adjusted R2 wass very low meaning there were many unobserved confounders in this experiment. The confounding factors are hard to identify because the 
+									Ebay algorithm, used in this experiment to ensure randomization, is not public.</li>
+									<a href="images/experimentRegressionTableSold.png"><img id=bodyImg class="img-fluid" src="images/experimentRegressionTableSold.png" alt="" /></a>
+								</ul>
+
+							<li>How much did it sell for?
+								<ul>
+									<li>The selling price was not normally distributed. Most of the flags sold at the starting price. However, the treatment group sold at a 
+									lower price.Because the sale price was not normally distributed, we used the Wilcoxon Rank Sum test for analysis. The
+									two sided analysis had a p-value of 0.0306, which is statistically significant.</li>
+									<a href="images/experimentChartSalesPrice.png"><img id=bodyImg class="img-fluid" src="images/experimentChartSalesPrice.png" alt="" /></a>
+					
+								</ul>
+							</li>
+						</ul>
+					</p>
+
+					<p>
+					To ensure we didn't have an overrepresentation of repeat customers that biased our results we also looked at the a number of purchases made by auction winners and most of the auctions were purchased by unique people.
+					</p>
+					<a href="images/experimentChartBidders.png"><img id=bodyImg class="img-fluid" src="images/experimentChartBidders.png" alt="" /></a>
+
+					<p></p>
+				</div>
+				<div id="impact" class = "container">
+					<h3>The Impact</h3>
+					<p>
+						Considering our statistical significance, we rejected the null hypothesis. Considering the small sample size, the causal effect was quite strong.
+						The study indicated that aggregate demand for a product was less, i.e. consumers would be buying less of the product if they have
+						certain characteristics which are not aligned with their political ideology.
+						The analysis of price showed significance too, but it might be because there were simply more unsold items in
+						the treatment group. In order to have a concrete result on the treatment effect on price, it might be more
+						desirable to re-run the experiment with longer auction duration
+					</p>
+					<p></p>
+				</div>
+			</section>		
+
+			<!-- Footer -->
+			<section id="footer" class="box">
+				<div id="footer" class="container">
+					<div class="row">
+						<div class="col-12">
+							<section>
+								<ul class="social">
+									<li><a class="icon brands fa-linkedin-in" href="https://www.linkedin.com/in/susmitapadala/"><span class="label">LinkedIn</span></a></li>
+									<li><a class="icon brands fa-github" href="https://github.com/padalah"><span class="label">Github</span></a></li>
+								</ul>
+							</section>
+							<!-- Copyright -->
+							<div id="copyright">
+								<ul class="links">
+									<li>&copy; Susmita Padala. All rights reserved.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+								</ul>
+							</div>
+
+						</div>
+					</div>
+				</div>
+			</section>
+
+		</div>
+
+		<!-- Scripts -->
+		<script src="assets/js/jquery.min.js"></script>
+		<script src="assets/js/jquery.dropotron.min.js"></script>
+		<script src="assets/js/browser.min.js"></script>
+		<script src="assets/js/breakpoints.min.js"></script>
+		<script src="assets/js/util.js"></script>
+		<script src="assets/js/main.js"></script>
+
+	</body>
+</html>
